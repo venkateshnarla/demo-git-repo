@@ -4,13 +4,6 @@ jobs:
   my-job:
     runs-on: Linux
     steps:
-      - name: message
-        shell: pwsh
-        run: | 
-          gci env:* | sort-object name          
-      - name: list the files
-        run: | 
-          ls -l          
       - name: checkout
         uses: actions/checkout@3
       - name: update website
