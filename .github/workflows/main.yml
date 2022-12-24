@@ -7,8 +7,15 @@ jobs:
       - name: message
         shell: pwsh
         run: | 
-          gci env:* | sort-object name
-          
+          gci env:* | sort-object name          
       - name: list the files
         run: | 
-          ls -l
+          ls -l          
+      - name: checkout
+        uses: actions/checkout@3
+      - name: update website
+        run: cp -vrf . /var/www/html
+      - name: check files
+        run: ls -l /var/www/html     
+        
+
