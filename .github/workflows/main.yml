@@ -5,6 +5,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: message
-        shell: pwh
+        shell: pwsh
         run: | 
           gci env:* | sort=object name
