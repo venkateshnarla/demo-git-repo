@@ -1,14 +1,14 @@
-name: ngnix-deployment
+name: nginx-deployment
 on: push
 jobs:
-  my-job:
-    runs-on: Linux
-    steps:
-      - name: checkout
-        uses: actions/checkout@3
-      - name: update website
-        run: cp -vrf . /var/www/html
-      - name: check files
-        run: ls -l /var/www/html     
-        
-
+ my-job:
+   runs-on: Windows
+   steps: 
+     - name: Checkout
+       uses: actions/checkout@v3
+     - name: Build Images
+       shell: cmd
+       run: docker build -t venkateshnarla/demo-git-repo .
+     - name: Push Image
+       shell: cmd
+       run: docker push venkateshnarla/demo-git-repo
