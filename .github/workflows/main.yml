@@ -1,4 +1,4 @@
-name: hello-world
+name: ngnix-deployment
 on: push
 jobs:
   my-job:
@@ -8,3 +8,7 @@ jobs:
         shell: pwsh
         run: | 
           gci env:* | sort-object name
+          
+      - name: list the files
+        run: | 
+          ls -l
